@@ -6,14 +6,14 @@ var updater = require('./server/autoUpdates.js');
 
 //update files every 20 hrs
 setInterval(function(){
-	console.log('running...')
+	console.log('running...');
 	updater.masterUpdate();
 },72000000);
 
 
 
 var app = express();
-var port = port = process.env.PORT || 8000;
+var port = process.env.PORT || 8000;
 
 app.set('port', port);
 app.use(bodyParser.json());
