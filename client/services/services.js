@@ -189,7 +189,6 @@ angular.module('githubscout.services', [])
   // Gets up to 1000 of the user's repos and for each repo pulls out various statistics.
   // Sorts the final resulting array by date.
   var getUserCommits = function(obj) {
-    console.log(obj)
     var username = obj.username;
     return $http({
       'method': 'GET',
