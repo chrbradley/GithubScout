@@ -3,7 +3,7 @@
     <h1 class="float-left">Github Statistics for {{username}}</h1>
     <div class="float-right">
       <h3 class="float-left">Compare another User: </h3>
-      <form ng-submit='addUser();' ng-click="newDiv()" class='fx-fade-normal float-right'>
+      <form ng-submit='addUser(); floatStyle={float: "left"}; compare=true;' class='fx-fade-normal float-right'>
         <input type ='text' ng-model='userdata.nextUsername' placeholder = 'Enter username'>
         <input type='submit' value='Search' >
       </form>
@@ -11,7 +11,7 @@
   </header>
 
   <div class="row">
-    <h2>GitHub User Commits Over Time</h2>
+    <h2 >GitHub User Commits Over Time</h2>
     <nvd3-multi-bar-chart
       data="commitsbyDateData"
       id="commitsbyDateDataId"
@@ -24,40 +24,45 @@
       </nvd3-multi-bar-chart>
   </div>
 
-  <div class="row">
-    <h2><b>GitHub User {{username}} Commits By Langauges</b></h2>
+  <div class="row" style="width: 1000px">
+    <h2 style="margin-bottom: 50px;">GitHub User Commits By Langauges</h2>
+    <div ng-style="floatStyle">
+      <h2 ng-show="compare">{{username}}</h2>
 
-    <nvd3-pie-chart
-      data="commitsperLangugageData"
-      id="exampleId1"
-      x="xFunction()"
-      y="yFunction()"
-      width="500"
-      height="500"
-      showLabels="true"
-      pieLabelsOutside="true"
-      showValues="true"
-       >
-      <svg></svg>
-    </nvd3-pie-chart>
-  </div>
-
-
-  <div class="row">
-    <h2><b>{{items.title}}</b></h2>
-    <nvd3-pie-chart
-      data="commitsperLangugageDataUser2"
-      id="piechart2"
-      x="xFunction()"
-      y="yFunction()"
-      width="500"
-      height="500"
-      showLabels="true"
-      pieLabelsOutside="true"
-      labelType="key"
-       >
-      <svg ></svg>
-    </nvd3-pie-chart>
+      <nvd3-pie-chart
+        data="commitsperLangugageData"
+        id="exampleId1"
+        x="xFunction()"
+        y="yFunction()"
+        width="500"
+        height="500"
+        showLabels="true"
+        pieLabelsOutside="true"
+        showValues="true"
+        tooltips="true"
+        tooltipcontent="toolTipContentFunction()"
+         >
+        <svg></svg>
+      </nvd3-pie-chart>
+    </div>
+    <div ng-style="floatStyle">
+      <h2>{{items.title}}</h2>
+      <nvd3-pie-chart
+        data="commitsperLangugageDataUser2"
+        id="piechart2"
+        x="xFunction()"
+        y="yFunction()"
+        width="500"
+        height="500"
+        showLabels="true"
+        pieLabelsOutside="true"
+        labelType="key"
+        tooltips="true"
+        tooltipcontent="toolTipContentFunction(1)"
+         >
+        <svg ></svg>
+      </nvd3-pie-chart>
+    </div>
   </div>
 
 </div>
