@@ -25,6 +25,8 @@
 
 .one-half, .one-third, .one-fourth, .two-thirds, .three-fourths {
 	// padding: 0 1%;
+  position: relative;
+  z-index: 1;
 }
 
 .one-whole {
