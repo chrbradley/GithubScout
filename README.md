@@ -1,12 +1,18 @@
-# Project Name
+# GitHub Scout
 
-> Pithy project description
+This project visually represents data about how people have been using GitHub! You can search by users or languages on GitHub.
 
-## Team
+1st iteration: http://githubscout.azurewebsites.net/
+2nd iteration: http://pacific-temple-6443.herokuapp.com/
+
+## Team - 1st Iteration
 
   - __Product Owner__: Kelly Walker
   - __Scrum Master__: Charles Wang
   - __Development Team Members__: Wai-Yin Kwan, Ben Rowles, Mike Lam
+
+## Team - 2nd Iteration
+  - __Development Team Members__: [Chris Bradley](https://github.com/chrbradley), [Robin Kim](https://github.com/therobinkim), [Huy Pham](https://github.com/huyphamily)
 
 ## Table of Contents
 
@@ -14,21 +20,20 @@
 1. [Requirements](#requirements)
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
-    1. [Tasks](#tasks)
-1. [Team](#team)
+    1. [Roadmap](#roadmap)
 1. [Contributing](#contributing)
 
 ## Usage
 
-> Some usage instructions
+- Run `grunt` to start SASS.
+- Run `nodemon --watch */* server.js` to start a local server.
+- Navigate to http://localhost:8000/ to see everything running!
 
 ## Requirements
 
 - Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+- Ruby 1.9.x (for SASS)
+- SASS 3.3.x
 
 ## Development
 
@@ -37,19 +42,18 @@
 From within the root directory:
 
 ```sh
-sudo npm install -g bower
 npm install
-bower install
 ```
 
 ### Roadmap
 
-View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
-
+View the project roadmap here:
+1st Iteration: https://waffle.io/goldenlions/githubscout
+2nd Iteration: https://waffle.io/remotelions/githubscout
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+See [CONTRIBUTING.md](_CONTRIBUTING.md) for contribution guidelines.
 
 
 ## Ideas

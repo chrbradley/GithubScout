@@ -10,14 +10,14 @@
   - doc/...
   - refactor/...
 1. Make commits to your feature branch. Prefix each commit like so:
-  - (feat) Added a new feature
-  - (fix) Fixed inconsistent tests [Fixes #0]
+  - (feat) add a new feature
+  - (fix) fix inconsistent tests [Fixes #0]
   - (refactor) ...
   - (cleanup) ...
   - (test) ...
   - (doc) ...
-1. When you've finished with your fix or feature, Rebase upstream changes into your branch. submit a [pull request][]
-   directly to master. Include a description of your changes.
+1. When you've finished with your fix or feature, push changes into your branch.
+   Submit a pull request directly to master. Include a description of your changes.
 1. Your pull request will be reviewed by another maintainer. The point of code
    reviews is to help keep the codebase clean and of high quality and, equally
    as important, to help you grow as a programmer. If your code reviewer
@@ -33,7 +33,7 @@
 Use github’s interface to make a fork of the repo, then add that repo as an upstream remote:
 
 ```
-git remote add upstream https://github.com/hackreactor-labs/<NAME_OF_REPO>.git
+git remote add upstream https://github.com/RemoteLions/GitHubScout
 ```
 
 ### Cut a namespaced feature branch from master
@@ -56,8 +56,8 @@ git checkout -b `your-branch-name`
 ### Make commits to your feature branch.
 
 Prefix each commit like so
-  - (feat) Added a new feature
-  - (fix) Fixed inconsistent tests [Fixes #0]
+  - (feat) add a new feature
+  - (fix) fix inconsistent tests [Fixes #0]
   - (refactor) ...
   - (cleanup) ...
   - (test) ...
@@ -70,7 +70,7 @@ changes.
 
 #### Commit Message Guidelines
 
-- Commit messages should be written in the present tense; e.g. "Fix continuous
+- Commit messages should be written in the present tense; e.g. "fix continuous
   integration script".
 - The first line of your commit message should be a brief summary of what the
   commit changes. Aim for about 70 characters max. Remember: This is a summary,
@@ -78,44 +78,6 @@ changes.
 - If you want to explain the commit in more depth, following the first line should
   be a blank line and then a more detailed description of the commit. This can be
   as detailed as you want, so dig into details here and keep the first line short.
-
-### Rebase upstream changes into your branch
-
-Once you are done making changes, you can begin the process of getting
-your code merged into the main repo. Step 1 is to rebase upstream
-changes to the master branch into yours by running this command
-from your branch:
-
-```
-git pull --rebase upstream master
-```
-
-This will start the rebase process. You must commit all of your changes
-before doing this. If there are no conflicts, this should just roll all
-of your changes back on top of the changes from upstream, leading to a
-nice, clean, linear commit history.
-
-If there are conflicting changes, git will start yelling at you part way
-through the rebasing process. Git will pause rebasing to allow you to sort
-out the conflicts. You do this the same way you solve merge conflicts,
-by checking all of the files git says have been changed in both histories
-and picking the versions you want. Be aware that these changes will show
-up in your pull request, so try and incorporate upstream changes as much
-as possible.
-
-Once you are done fixing conflicts for a specific commit, run:
-
-```
-git rebase --continue
-```
-
-This will continue the rebasing process. Once you are done fixing all
-conflicts you should run the existing tests to make sure you didn’t break
-anything, then run your new tests (there are new tests, right?) and
-make sure they work also.
-
-If rebasing broke anything, fix it, then repeat the above process until
-you get here again and nothing is broken and all the tests pass.
 
 ### Make a pull request
 
@@ -137,14 +99,10 @@ Thanks for contributing!
 
 ### Guidelines
 
-1. Uphold the current code standard:
-    - Keep your code [DRY][].
-    - Apply the [boy scout rule][].
-    - Follow [STYLE-GUIDE.md](STYLE-GUIDE.md)
-1. Run the [tests][] before submitting a pull request.
-1. Tests are very, very important. Submit tests if your pull request contains
-   new, testable behavior.
-1. Your pull request is comprised of a single ([squashed][]) commit.
+Uphold the current code standard:
+- Keep your code [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself).
+- Apply the [boy scout rule](http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule).
+- Follow [STYLE-GUIDE.md](_STYLE-GUIDE.md)
 
 ## Checklist:
 
@@ -167,16 +125,3 @@ no problem getting your changes merged in.
 ### Documentation
 - At the beginning of each file, include a comment that provides an overview of what the file accomplishes.
 - Before each function, include a comment that provides detail of what the function does and its inputs and outputs.
-
-<!-- Links -->
-[style guide]: https://github.com/hackreactor-labs/style-guide
-[n-queens]: https://github.com/hackreactor-labs/n-queens
-[Underbar]: https://github.com/hackreactor-labs/underbar
-[curriculum workflow diagram]: http://i.imgur.com/p0e4tQK.png
-[cons of merge]: https://f.cloud.github.com/assets/1577682/1458274/1391ac28-435e-11e3-88b6-69c85029c978.png
-[Bookstrap]: https://github.com/hackreactor/bookstrap
-[Taser]: https://github.com/hackreactor/bookstrap
-[tools workflow diagram]: http://i.imgur.com/kzlrDj7.png
-[Git Flow]: http://nvie.com/posts/a-successful-git-branching-model/
-[GitHub Flow]: http://scottchacon.com/2011/08/31/github-flow.html
-[Squash]: http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html
