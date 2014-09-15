@@ -1,6 +1,6 @@
 <div class="language">
   <header class="one-whole clear-after">
-    <h1 class="float-left">Github Statistics for {{ data.currentLanguages[0] }}</h1>
+    <h1 class="float-left">GitHub Statistics for {{ data.currentLanguages[0] }}</h1>
 <!--     <ul>
       <li ng-repeat="language in data.currentLanguages">{{language}}</li>
     </ul> -->
@@ -30,6 +30,8 @@
               showlegend = "true"
               margin="{left:150,top:50,bottom:0,right:50}"
               xAxisTickFormat="xAxisTickFormat()"
+                yaxislabel="Commits Made"
+                xaxislabel="Date"
               >
            <svg></svg>
       </nvd3-line-chart>
@@ -50,6 +52,8 @@
               showlegend = "true"
               margin="{left:150,top:50,bottom:0,right:50}"
               xAxisTickFormat="xAxisTickFormat()"
+                yaxislabel="Repos Created"
+                xaxislabel="Date"
               >
            <svg></svg>
       </nvd3-line-chart>
@@ -71,6 +75,8 @@
               showlegend = "true"
               margin="{left:150,top:50,bottom:0,right:50}"
               xAxisTickFormat="xAxisTickFormat()"
+                yaxislabel="Repos Made Public"
+                xaxislabel="Date"
               >
           <svg></svg>
       </nvd3-line-chart>
@@ -90,6 +96,8 @@
               showlegend = "true"
               margin="{left:150,top:50,bottom:0,right:50}"
               xAxisTickFormat="xAxisTickFormat()"
+                yaxislabel="Pushes to Repos"
+                xaxislabel="Date"
               >
           <svg></svg>
       </nvd3-line-chart>

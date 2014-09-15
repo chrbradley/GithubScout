@@ -1,40 +1,42 @@
 .language {
-	svg {
-		height: 440px;
-		width: 600px;
-		margin-left: -120px;
-	}
+  svg {
+    height: 440px;
+    width: 600px;
+    margin-left: -120px;
+  }
 
-	.second-half {
-		border-left: 1px solid #CCC;
-		padding-left: 16px;
-	}
+  .second-half {
+    border-left: 1px solid #CCC;
+    padding-left: 60px;
+    position: relative;
+    z-index: 0;
+  }
 
-	table {
-		width: 100%;
+  table {
+    width: 100%;
 
-		a {
-			color: #5698C6;
+    a {
+      color: #5698C6;
 
-			&:hover {
-				color: #457BA0
-			}
-		}
+      &:hover {
+        color: #457BA0
+      }
+    }
 
-		tr:nth-child(even) {
-			background: #E5E5E5
-		}
+    tr:nth-child(even) {
+      background: #E5E5E5
+    }
 
-		tr:nth-child(odd) {
-			background: #F6F6F6
-		}
+    tr:nth-child(odd) {
+      background: #F6F6F6
+    }
 
-		tr td {
-			padding: 8px 0;
+    tr td {
+      padding: 8px 0;
 
-			&:nth-child(1) {
-				padding-left: 10px;
-			}
-		}
-	}
+      &:nth-child(1) {
+        padding-left: 10px;
+      }
+    }
+  }
 }
