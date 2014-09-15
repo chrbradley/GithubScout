@@ -25,15 +25,14 @@ userapp.controller('UserController', ['$scope', 'UserData', 'UserSearch', 'UserD
     var time = {};
     var timeArray = [];
     _.each(data, function(value){
-      if( !time.hasOwnProperty(value[0]) ){
-        // console.log('key', value[0]);
-        time[value[0]] = value[1];
+      var date = value[0];
+      var ammount = value[1];
+      if( !time.hasOwnProperty(date) ){
+        time[date] = ammount;
       } else {
-        time[value[0]]+= value[1];
-        // console.log('key exist', value[1], time[value[0]]);
+        time[date]+= ammount;
       }
     });
-    // console.log(time);
 
     _.each(time, function(value, key){
       timeArray.push([key, value]);
@@ -111,8 +110,8 @@ userapp.controller('UserController', ['$scope', 'UserData', 'UserSearch', 'UserD
     }
 
     return function(key, x, y, e, graph) {
-        return '<h1>' + key + '</h1>' +
-              '<p>' + 'Value: ' + parseInt(x) + '</p>' +
+        return '<h1 style="text-align: center">' + key + '</h1>' +
+              '<p>' + 'Value: ' + parseInt(x) + ' commits' + '</p>' +
               '<p>' + 'Percentage: ' + (x/total*100).toFixed(2) + '%' + '</p>';
     };
   };
