@@ -263,4 +263,9 @@ footer {
 footer, .page-wrap:after {
   height: 60px; }
 
+.loading2 {
+  width: 20px;
+  top: 5px;
+  position: relative; }
+
 /*# sourceMappingURL=main.css.map */

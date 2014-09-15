@@ -1,6 +1,8 @@
 var userapp = angular.module('githubscout.user', ['ui.router','nvd3ChartDirectives']);
 
 userapp.controller('UserController', ['$scope', 'UserData', 'UserSearch', 'UserDateandCommits','UserLanguagesandCommits','UserCompareRescaleBar',function($scope, UserData, UserSearch, UserDateandCommits,UserLanguagesandCommits,UserCompareRescaleBar) {
+  $scope.removed = false;
+  $scope.loading2 = false;
   $scope.userdata ={};
   $scope.username = UserData.username;
   $scope.userdata.data = UserData.rawDataCommitsByLanguage;
@@ -59,7 +61,7 @@ userapp.controller('UserController', ['$scope', 'UserData', 'UserSearch', 'UserD
 
   // Function grabs second user's data from compare user input to compare with first user on same commits over time chart AND to display second pie chart.
   $scope.addUser = function () {
-
+    $scope.loading2 = true;
     // This will add a header for the second pie chart.
     $scope.items = {title: $scope.userdata.nextUsername};
 
@@ -85,8 +87,19 @@ userapp.controller('UserController', ['$scope', 'UserData', 'UserSearch', 'UserD
         for(var i = 0; i < $scope.commitsperLangugageDataUser2.length; i++){
           pieTotal2 += $scope.commitsperLangugageDataUser2[i].count;
         }
-
+        $scope.loading2 = false;
+        $scope.removed = false;
       });
+  };
+
+  //remove user function
+  $scope.removeUser = function(){
+    $scope.commitsbyDateData = [{
+      key : $scope.username,
+      values : $scope.userDateandCommits
+    }];
+
+    $scope.removed = true;
   };
 
   //Function that allows nvd3 and d3 to access x values from the ‘data’.
