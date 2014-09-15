@@ -100,37 +100,39 @@ button, input {
 .home h1 {
   margin-bottom: 10px; }
 
-.search select {
-  max-width: 140px; }
-.search button {
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  min-width: 125px; }
-  .search button.button-left {
-    border-radius: 5px 0 0 5px; }
-  .search button.button-right {
-    border-radius: 0 5px 5px 0; }
-  .search button.selected {
-    background-color: #5698C6;
-    box-shadow: inset 0 4px 5px rgba(0, 0, 0, 0.19); }
-.search input[type=text] {
-  background: #171717;
-  color: #FFF;
-  padding: 8px 7px;
-  font-size: 13px;
-  border: 1px solid #505050;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(228, 228, 228, 0.26);
-  border-radius: 4px;
-  float: left; }
-  .search input[type=text]:focus {
-    border-color: rgba(82, 168, 236, 0.8);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6); }
-.search .loading {
-  width: 20px;
-  position: absolute;
-  margin-top: -27px;
-  margin-left: -32px; }
+.search {
+  width: 450px; }
+  .search select {
+    width: 150px; }
+  .search button {
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
+    .search button.button-left {
+      border-radius: 5px 0 0 5px; }
+    .search button.button-right {
+      border-radius: 0 5px 5px 0; }
+    .search button.selected {
+      background-color: #5698C6;
+      box-shadow: inset 0 4px 5px rgba(0, 0, 0, 0.19); }
+  .search input[type=text] {
+    background: #171717;
+    color: #FFF;
+    padding: 8px 7px;
+    font-size: 13px;
+    border: 1px solid #505050;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(228, 228, 228, 0.26);
+    border-radius: 4px;
+    float: left;
+    width: 150px; }
+    .search input[type=text]:focus {
+      border-color: rgba(82, 168, 236, 0.8);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6); }
+  .search .loading {
+    width: 20px;
+    position: absolute;
+    margin-top: -27px;
+    margin-left: -32px; }
 
 .user input[type=text] {
   background: #F1F1F1;
