@@ -2,8 +2,8 @@
 
 This project visually represents data about how people have been using GitHub! You can search by users or languages on GitHub.
 
-1st iteration: http://githubscout.azurewebsites.net/
-2nd iteration: http://pacific-temple-6443.herokuapp.com/
+* 1st iteration: http://githubscout.azurewebsites.net/
+* 2nd iteration: http://pacific-temple-6443.herokuapp.com/
 
 ## Team - 1st Iteration
 
@@ -48,8 +48,9 @@ npm install
 ### Roadmap
 
 View the project roadmap here:
-1st Iteration: https://waffle.io/goldenlions/githubscout
-2nd Iteration: https://waffle.io/remotelions/githubscout
+
+* 1st Iteration: https://waffle.io/goldenlions/githubscout
+* 2nd Iteration: https://waffle.io/remotelions/githubscout
 
 ## Contributing
 
