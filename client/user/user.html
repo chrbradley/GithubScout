@@ -3,6 +3,8 @@
     <h1 class="float-left">Github Statistics for {{username}}</h1>
     <div class="float-right">
       <h3 class="float-left">Compare another User: </h3>
+      <img src="../styles/loader2.gif" ng-show="loading2" class="float-right loading2" />
+      <input type='submit' value='Clear' ng-click='removeUser(); floatStyle={}' class='float-right'>
       <form ng-submit='addUser(); floatStyle={float: "left"}; compare=true;' class='fx-fade-normal float-right'>
         <input type ='text' ng-model='userdata.nextUsername' placeholder = 'Enter username'>
         <input type='submit' value='Search' >
@@ -49,7 +51,7 @@
         <svg></svg>
       </nvd3-pie-chart>
     </div>
-    <div ng-style="floatStyle">
+    <div ng-style="floatStyle" ng-hide="removed">
       <h2>{{items.title}}</h2>
       <nvd3-pie-chart
         data="commitsperLangugageDataUser2"
