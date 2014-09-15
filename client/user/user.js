@@ -20,7 +20,29 @@ userapp.controller('UserController', ['$scope', 'UserData', 'UserSearch', 'UserD
     return UserLanguagesandCommits.getUserCommitsperLanganguage(data);
   };
 
-  $scope.userDateandCommits = getdateandCommits($scope.userdata.data).reverse();
+  //combining the commits with the same date into one
+  var checkDate = function(data){
+    var time = {};
+    var timeArray = [];
+    _.each(data, function(value){
+      var date = value[0];
+      var ammount = value[1];
+      if( !time.hasOwnProperty(date) ){
+        time[date] = ammount;
+      } else {
+        time[date]+= ammount;
+      }
+    });
+
+    _.each(time, function(value, key){
+      timeArray.push([key, value]);
+    });
+
+    return timeArray;
+  };
+
+  $scope.userDateandCommits =  checkDate( getdateandCommits($scope.userdata.data).reverse() );
+  // console.log( $scope.userDateandCommits );
 
   // Data for first user bar chart.
   $scope.commitsbyDateData =[{
@@ -43,7 +65,7 @@ userapp.controller('UserController', ['$scope', 'UserData', 'UserSearch', 'UserD
 
     UserSearch.getUserCommitsByLanguage({username: $scope.userdata.nextUsername})
       .then(function (data) {
-        var secondUserDateandCommits = getdateandCommits(data).reverse();
+        var secondUserDateandCommits = checkDate( getdateandCommits(data).reverse() );
         var combinedNewandOldUserDatesData = getCompareRescaleBar($scope.userDateandCommits, secondUserDateandCommits);
 
         // Data for first AND second user bar chart.
@@ -88,8 +110,8 @@ userapp.controller('UserController', ['$scope', 'UserData', 'UserSearch', 'UserD
     }
 
     return function(key, x, y, e, graph) {
-        return '<h1>' + key + '</h1>' +
-              '<p>' + 'Value: ' + parseInt(x) + '</p>' +
+        return '<h1 style="text-align: center">' + key + '</h1>' +
+              '<p>' + 'Value: ' + parseInt(x) + ' commits' + '</p>' +
               '<p>' + 'Percentage: ' + (x/total*100).toFixed(2) + '%' + '</p>';
     };
   };
