@@ -10,8 +10,8 @@
         languages.push(data[i].repository_language);
       }
       console.log(languages.length);
-    
-    
+
+
     var scene = d3.select("#traceCat")
       .append("svg")
       .attr("width", w)
@@ -57,7 +57,7 @@
                 // .attr('font-size', 0)
                 .remove()
               ;
-              
+
     }
 
     var count = 0;
